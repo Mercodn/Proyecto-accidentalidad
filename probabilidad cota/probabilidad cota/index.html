@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Accidentes de Tránsito en Cota</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#prediccion" class="active">Predicción</a></li>
+            <li><a href="#metodologia">Metodología</a></li>
+        </ul>
+    </nav>
+    <div id="app">
+        <!-- Formulario de predicción -->
+        <div id="prediccion">
+            <form id="prediction-form">
+                <label for="tipo">Tipo de accidente:</label>
+                <select id="tipo" name="tipo">
+                    <option value="Choque">Choque</option>
+                    <option value="Atropello">Atropello</option>
+                    <option value="Volcamiento">Volcamiento</option>
+                    <option value="Caída">Caída</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="dia">Día de la semana:</label>
+                <select id="dia" name="dia">
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora">
+
+                <label for="vehiculos">Número de vehículos involucrados:</label>
+                <input type="number" id="vehiculos" name="vehiculos" min="1">
+
+                <label for="hipotesis">Causa probable:</label>
+                <select id="hipotesis" name="hipotesis">
+                    <option value="Exceso de velocidad">Exceso de velocidad</option>
+                    <option value="Imprudencia">Imprudencia</option>
+                    <option value="Distracción">Distracción</option>
+                    <option value="Mal estado de la vía">Mal estado de la vía</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <button type="submit">Estimar riesgo</button>
+            </form>
+
+            <!-- Resultados de la predicción -->
+            <div id="prediction-result">
+                <p>Probabilidad de accidente: <span id="probabilidad"></span></p>
+                <p>Interpretación del riesgo: <span id="interpretacion"></span></p>
+            </div>
+
+            <!-- Visualizaciones de datos históricos -->
+            <div id="historical-data">
+                <h2>Datos Históricos</h2>
+                <div id="map"></div>
+                <div id="charts"></div>
+            </div>
+        </div>
+
+        <div id="metodologia">
+            <h2>Metodología: CRISP-ML aplicada al proyecto</h2>
+            <h3>1. Entendimiento del negocio</h3>
+            <p>El problema abordado es la alta tasa de accidentes de tránsito en Cota. El objetivo es reducir la accidentalidad mediante una herramienta predictiva basada en datos históricos.</p>
+            <h3>2. Comprensión de los datos</h3>
+            <p>Se utilizó un dataset de Datos Abiertos Colombia con variables como tipo de accidente, hora, día, causa, número de vehículos y ubicación. Se evaluó la calidad de los datos y se estandarizaron las variables categóricas.</p>
+            <h3>3. Ingeniería de datos</h3>
+            <p>Se seleccionaron columnas útiles, se limpiaron errores y se renombraron los campos. Se creó un archivo CSV limpio con las columnas: fecha, hora, día, tipo, hipótesis, vehículos, gravedad, latitud y longitud.</p>
+            <h3>4. Ingeniería del modelo</h3>
+            <p>Se simuló un modelo de clasificación (como regresión logística o random forest). Se definieron reglas condicionales para predecir la probabilidad de accidente según condiciones específicas ingresadas por el usuario.</p>
+            <h3>5. Evaluación del modelo</h3>
+            <p>La lógica fue validada a través de casos de prueba. Los resultados se interpretan en niveles de riesgo (bajo, medio, alto) con apoyo visual (colores e íconos).</p>
+            <h3>6. Despliegue del modelo</h3>
+            <p>La app fue generada en Trae.AI, integrando el formulario de entrada, lógica de predicción y visualizaciones interactivas. El modelo simulado puede ser reemplazado por uno real en el futuro.</p>
+            <h3>7. Monitoreo y mantenimiento</h3>
+            <p>En versiones futuras se podrá cargar un modelo entrenado real, actualizar los datos y ajustar la lógica conforme a nueva evidencia o condiciones locales.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

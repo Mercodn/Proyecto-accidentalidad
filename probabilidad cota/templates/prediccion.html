@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Accidentes</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/metodologia">Metodología</a></li>
+            <li><a href="/datos-historicos">Datos Históricos</a></li>
+        </ul>
+    </nav>
+    <div id="app">
+        <h1>Predicción de Accidentes de Tránsito</h1>
+        <form id="prediction-form">
+            <label for="tipo">Tipo de accidente:</label>
+            <select id="tipo" name="tipo">
+                <option value="Choque">Choque</option>
+                <option value="Atropello">Atropello</option>
+                <option value="Volcamiento">Volcamiento</option>
+                <option value="Caída">Caída</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="dia">Día de la semana:</label>
+            <select id="dia" name="dia">
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                <option value="Sábado">Sábado</option>
+                <option value="Domingo">Domingo</option>
+            </select>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora">
+
+            <label for="vehiculos">Número de vehículos involucrados:</label>
+            <input type="number" id="vehiculos" name="vehiculos" min="1">
+
+            <label for="hipotesis">Causa probable:</label>
+            <select id="hipotesis" name="hipotesis">
+                <option value="Exceso de velocidad">Exceso de velocidad</option>
+                <option value="Imprudencia">Imprudencia</option>
+                <option value="Distracción">Distracción</option>
+                <option value="Mal estado de la vía">Mal estado de la vía</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <button type="submit">Estimar riesgo</button>
+        </form>
+
+        <div id="prediction-result">
+            <p>Probabilidad de accidente: <span id="probabilidad"></span></p>
+            <p>Interpretación del riesgo: <span id="interpretacion" class="riesgo-alto">Riesgo Alto</span></p>
+        </div>
+    </div>
+
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <h1>Metodología: CRISP-ML aplicada al proyecto</h1>
+    <div class="card">
+        <h3>🧠 1. Entendimiento del negocio</h3>
+        <p>El problema abordado es la alta tasa de accidentes de tránsito en Cota. El objetivo es reducir la accidentalidad mediante una herramienta predictiva basada en datos históricos.</p>
+    </div>
+    <div class="card">
+        <h3>📊 2. Comprensión de los datos</h3>
+        <p>Se utilizó un dataset de Datos Abiertos Colombia con variables como tipo de accidente, hora, día, causa, número de vehículos y ubicación. Se evaluó la calidad de los datos y se estandarizaron las variables categóricas.</p>
+    </div>
+    <div class="card">
+        <h3>⚙️ 3. Ingeniería de datos</h3>
+        <p>Se seleccionaron columnas útiles, se limpiaron errores y se renombraron los campos. Se creó un archivo CSV limpio con las columnas: fecha, hora, día, tipo, hipótesis, vehículos, gravedad, latitud y longitud.</p>
+    </div>
+    <div class="card">
+        <h3>🔍 4. Ingeniería del modelo</h3>
+        <p>Se simuló un modelo de clasificación (como regresión logística o random forest). Se definieron reglas condicionales para predecir la probabilidad de accidente según condiciones específicas ingresadas por el usuario.</p>
+    </div>
+    <div class="card">
+        <h3>🧪 5. Evaluación del modelo</h3>
+        <p>La lógica fue validada a través de casos de prueba. Los resultados se interpretan en niveles de riesgo (bajo, medio, alto) con apoyo visual (colores e íconos).</p>
+    </div>
+    <div class="card">
+        <h3>🚀 6. Despliegue del modelo</h3>
+        <p>La app fue generada en Trae.AI, integrando el formulario de entrada, lógica de predicción y visualizaciones interactivas. El modelo simulado puede ser reemplazado por uno real en el futuro.</p>
+    </div>
+    <div class="card">
+        <h3>🔄 7. Monitoreo y mantenimiento</h3>
+        <p>En versiones futuras se podrá cargar un modelo entrenado real, actualizar los datos y ajustar la lógica conforme a nueva evidencia o condiciones locales.</p>
+    </div>
+</body>
+</html>
